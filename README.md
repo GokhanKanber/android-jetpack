@@ -6,7 +6,7 @@ Android Jetpack samples.
 
 The repository includes projects with modules. Each module is a different application.
 
-## Projects
+## Modules
 
 |    | Project | Module | Description |
 | -- | ------- | ------ | ----------- |
