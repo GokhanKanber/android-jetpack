@@ -4,7 +4,7 @@
 
 Android Jetpack samples.
 
-The repository includes projects. Each project includes modules. Each module is a different application.
+The repository includes projects with modules. Each module is a different application.
 
 ## Projects
 
