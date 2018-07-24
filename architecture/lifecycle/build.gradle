@@ -1,0 +1,62 @@
+/*
+ * Copyright 2018 Gökhan Kanber
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+apply plugin: rootProject.ext.plugins.android
+
+android {
+    compileSdkVersion rootProject.ext.build.compileSdk
+    buildToolsVersion rootProject.ext.build.buildTools
+
+    defaultConfig {
+        applicationId "${rootProject.ext.build.companyDomain}.architecture.lifecycle"
+        minSdkVersion rootProject.ext.build.minSdk
+        targetSdkVersion rootProject.ext.build.targetSdk
+        versionCode 1
+        versionName "1.0"
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = ["room.schemaLocation": "$projectDir/schemas".toString()]
+            }
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    // for Gradle 3.4+ and Android Plugin 3.0.0+
+    // use implementation
+    compile rootProject.ext.dependencies.support.appcompatV7
+    compile rootProject.ext.dependencies.support.design
+    compile rootProject.ext.dependencies.support.cardviewV7
+    compile rootProject.ext.dependencies.support.recyclerviewV7
+    compile rootProject.ext.dependencies.volley
+    compile rootProject.ext.dependencies.glide
+
+    // ViewModel and LiveData
+    compile rootProject.ext.dependencies.lifecycle.extensions
+    annotationProcessor rootProject.ext.dependencies.lifecycle.compiler
+
+    // Room
+    compile rootProject.ext.dependencies.room.runtime
+    annotationProcessor rootProject.ext.dependencies.room.compiler
+}
