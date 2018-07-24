@@ -1,0 +1,107 @@
+/*
+ * Copyright 2018 Gökhan Kanber
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+def versions = [:]
+def build = [:]
+def dependencies = [:]
+def plugin = [:]
+def support = [:]
+def lifecycle = [:]
+def room = [:]
+def paging = [:]
+def navigation = [:]
+def work = [:]
+def volley
+def glide
+def plugins = [:]
+
+versions.androidPlugin = "2.3.3"
+versions.compileSdk = 28
+versions.buildTools = "28.0.0"
+versions.minSdk = 14
+versions.targetSdk = 28
+versions.supportLib = "27.1.1"
+versions.lifecycle = "1.1.1"
+versions.room = "1.1.0"
+versions.paging = "1.0.0"
+versions.navigation = "1.0.0-alpha01"
+versions.workManager = "1.0.0-alpha02"
+versions.volley = "1.1.0"
+versions.glide = "4.7.1"
+
+build.companyDomain = "com.gokhankanber.android"
+build.compileSdk = versions.compileSdk
+build.buildTools = versions.buildTools
+build.minSdk = versions.minSdk
+build.targetSdk = versions.targetSdk
+
+plugin.android = "com.android.tools.build:gradle:${versions.androidPlugin}"
+plugin.navigationSafeArgs = "android.arch.navigation:navigation-safe-args-gradle-plugin:${versions.navigation}"
+
+support.appcompatV7 = "com.android.support:appcompat-v7:${versions.supportLib}"
+support.design = "com.android.support:design:${versions.supportLib}"
+support.cardviewV7 = "com.android.support:cardview-v7:${versions.supportLib}"
+support.recyclerviewV7 = "com.android.support:recyclerview-v7:${versions.supportLib}"
+
+lifecycle.extensions = "android.arch.lifecycle:extensions:${versions.lifecycle}"
+lifecycle.compiler = "android.arch.lifecycle:compiler:${versions.lifecycle}"
+// lifecycle.extensions = "androidx.lifecycle:lifecycle-extensions:${versions.lifecycle}"
+// lifecycle.compiler = "androidx.lifecycle:lifecycle-compiler:${versions.lifecycle}"
+
+room.runtime = "android.arch.persistence.room:runtime:${versions.room}"
+room.compiler = "android.arch.persistence.room:compiler:${versions.room}"
+// room.runtime = "androidx.room:room-runtime:${versions.room}"
+// room.compiler = "androidx.room:room-compiler:${versions.room}"
+
+paging.runtime = "android.arch.paging:runtime:${versions.paging}"
+// paging.runtime = "androidx.paging:paging-runtime:${versions.paging}"
+
+navigation.fragment = "android.arch.navigation:navigation-fragment:${versions.navigation}"
+navigation.ui = "android.arch.navigation:navigation-ui:${versions.navigation}"
+
+work.runtime = "android.arch.work:work-runtime:${versions.workManager}"
+
+volley = "com.android.volley:volley:${versions.volley}"
+glide = "com.github.bumptech.glide:glide:${versions.glide}"
+
+plugins.android = "com.android.application"
+plugins.navigationSafeArgs = "androidx.navigation.safeargs"
+
+def addRepos(RepositoryHandler handler) {
+    handler.jcenter()
+
+    // for gradle version >= 4.1
+    // handler.google()
+
+    // for gradle version < 4.1
+    handler.maven {
+        url "https://maven.google.com"
+    }
+}
+
+ext.build = build
+dependencies.plugin = plugin
+dependencies.support = support
+dependencies.lifecycle = lifecycle
+dependencies.room = room
+dependencies.paging = paging
+dependencies.navigation = navigation
+dependencies.work = work
+dependencies.volley = volley
+dependencies.glide = glide
+ext.dependencies = dependencies
+ext.plugins = plugins
+ext.addRepos = this.&addRepos
