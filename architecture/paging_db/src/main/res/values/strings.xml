@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+Copyright 2018 Gökhan Kanber
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
+<resources>
+
+    <string name="app_name">Paging</string>
+    <string name="project_name">Android Jetpack</string>
+    <string name="component_name">Architecture</string>
+    <string name="version">version %1$s</string>
+    <string name="author_name">Gökhan Kanber</string>
+    <string name="author_web">http://www.gokhankanber.com/</string>
+    <string name="notes">Notes</string>
+    <string name="note">Note</string>
+    <string name="about">About</string>
+    <string name="refresh">Refresh</string>
+    <string name="no_note">No note</string>
+    <string name="loading">Loading</string>
+    <string name="title">Title</string>
+    <string name="content">Content</string>
+    <string name="delete">Delete</string>
+    <string name="undo">Undo</string>
+
+    <string name="note_deleted">Note is deleted.</string>
+    <string name="empty_title">Empty title.</string>
+
+</resources>
