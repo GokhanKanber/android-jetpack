@@ -11,6 +11,7 @@ The repository includes projects with modules. Each module is a different applic
 |    | Project | Module | Description |
 | -- | ------- | ------ | ----------- |
 | 1. | [architecture](https://github.com/GokhanKanber/android-jetpack/tree/master/architecture/) | [lifecycle](https://github.com/GokhanKanber/android-jetpack/tree/master/architecture/lifecycle/) | ViewModel, LiveData, Room. |
+| 2. | [architecture](https://github.com/GokhanKanber/android-jetpack/tree/master/architecture/) | [paging_db](https://github.com/GokhanKanber/android-jetpack/tree/master/architecture/paging_db/) | Paging database. |
 
 ## License
 
