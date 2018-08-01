@@ -14,4 +14,4 @@
  * limitations under the License.
  */
 
-include ':lifecycle'
+include ':lifecycle', ':paging_db'
